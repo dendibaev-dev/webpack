@@ -12,7 +12,7 @@ const filename = ext => isDev ? `bundle.${ext}` : `bundle[hash].${ext}`
 module.exports = {
     mode: "development",
     context: path.resolve(__dirname, "src"),
-    entry: './index.js',
+    entry: ['@babel/polyfill', './index.js'],
     output: {
         filename: filename("js"),
         path: path.resolve(__dirname, "dist"),
@@ -71,6 +71,17 @@ module.exports = {
             {
                 test: /\.(ttf|woff|woff2|eot)$/,
                 use: ["file-loader"]
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ['@babel/preset-env'],
+                        plugins: ["@babel/plugin-proposal-class-properties"]
+                    },
+                }
             }
         ]
     },
