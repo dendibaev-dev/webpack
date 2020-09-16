@@ -1,2 +1,8 @@
 # webpack
-WEBPACK YOUTUBE COURSE
+Webpack config
+
+--HTML
+--CSS
+--JAVASCRIPT
+--IMAGES
+--FONTS
