@@ -23,6 +23,7 @@ module.exports = {
             "@": path.resolve(__dirname, "src")
         }
     },
+    devtool: isDev ? 'source-map' : false,
     devServer: {
         port: 8080,
         hot: isDev,
