@@ -1,2 +1,2 @@
-import "./css/style.css"
-import "./js/module"
+import "@/css/style.css"
+import "@/js/module"
