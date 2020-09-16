@@ -1,2 +1,2 @@
 import "./css/style.css"
-console.log("working 7")
+import "./js/module"

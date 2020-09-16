@@ -1,0 +1,24 @@
+@font-face {
+    font-display: swap;
+    font-family: "Montserrat Regular";
+    src: url("../assets/fonts/Montserrat-Regular.eot");
+    src: local("Montserrat Regular"), local("Montserrat-Regular"),
+    url("../assets/fonts/Montserrat-Regular.eot?#iefix")
+    format("embedded-opentype"),
+    url("../assets/fonts/Montserrat-Regular.woff") format("woff"),
+    url("../assets/fonts/Montserrat-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Sansita One";
+    src: url("../assets/fonts/SansitaOne.eot");
+    src: local("Sansita One"), local("SansitaOne"),
+    url("../assets/fonts/SansitaOne.eot?#iefix") format("embedded-opentype"),
+    url("../assets/fonts/SansitaOne.woff") format("woff"),
+    url("../assets/fonts/SansitaOne.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
