@@ -7,7 +7,25 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const isProd = process.env.NODE_ENV === "production"
 const isDev = !isProd
+
 const filename = ext => isDev ? `bundle.${ext}` : `bundle[hash].${ext}`
+const jsLoader = () => {
+    const loaders = [
+        {
+            loader: "babel-loader",
+            options: {
+                presets: ["@babel/preset-env"],
+                plugins: ["@babel/plugin-proposal-class-properties"]
+            },
+        },
+    ];
+
+    if (isDev) {
+        [loaders.push("eslint-loader")]
+    }
+
+    return loaders;
+};
 
 module.exports = {
     mode: "development",
@@ -76,13 +94,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader",
-                    options: {
-                        presets: ['@babel/preset-env'],
-                        plugins: ["@babel/plugin-proposal-class-properties"]
-                    },
-                }
+                use: jsLoader()
             }
         ]
     },
